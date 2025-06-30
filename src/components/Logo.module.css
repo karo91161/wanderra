@@ -1,0 +1,18 @@
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.logo {
+  height: 4.2rem;
+}
+
+.logoText {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin-left: 1rem;
+}
