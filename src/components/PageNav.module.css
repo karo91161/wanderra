@@ -18,9 +18,9 @@
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 600;
+  width: 5%;
 }
 
-/* CSS Modules feature */
 .nav a:global(.active) {
   color: var(--color-brand--2);
 }

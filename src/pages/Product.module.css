@@ -32,3 +32,37 @@
 .product section a {
   margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+  .product {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .product section {
+    width: 100%;
+    margin: 4rem auto;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .product p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product section a {
+    margin-top: 1.5rem;
+  }
+}
