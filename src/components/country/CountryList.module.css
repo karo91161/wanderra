@@ -4,9 +4,41 @@
   list-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
+  overflow: auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: start;
   gap: 1.6rem;
+}
+
+.your-scrollable-div::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.your-scrollable-div::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.your-scrollable-div::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+  border: none;
+}
+
+.your-scrollable-div::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.your-scrollable-div::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.your-scrollable-div {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
 }
