@@ -60,7 +60,7 @@ function Form() {
             navigate(-1);
           }}
         >
-          &larr; Back
+          Back
         </Button>
       </div>
     </form>

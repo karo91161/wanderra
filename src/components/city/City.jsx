@@ -72,7 +72,7 @@ function City() {
             navigate(-1);
           }}
         >
-          &larr; Back
+          Back
         </Button>
       </div>
     </div>
