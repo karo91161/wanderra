@@ -89,7 +89,7 @@ This is a **frontend-only project** created for educational purposes.
 - **React Router v6**
 - **React Leaflet**
 - **CSS Modules**
-- **Vite** (or CRA, based on setup)
+- **Vite**
 - **No backend** (pure frontend learning focus)
 
 
