@@ -16,6 +16,7 @@ import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCities } from "../../contexts/CitiesContext";
 import { useGeolocation } from "../../hooks/useGeolocation";
 import Button from "../common/Button";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -27,10 +28,9 @@ L.Icon.Default.mergeOptions({
 
 function Map() {
   const { cities } = useCities();
-  const [searchparams] = useSearchParams();
-  const currentLat = searchparams.get("lat");
-  const currentLng = searchparams.get("lng");
+
   const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [currentLat, currentLng] = useUrlPosition();
   const {
     isLoading: isLoadingPosition,
     position: geolocationPosition,
