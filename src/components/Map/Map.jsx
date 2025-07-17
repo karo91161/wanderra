@@ -14,6 +14,9 @@ import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCities } from "../../contexts/CitiesContext";
+import { useGeolocation } from "../../hooks/useGeolocation";
+import Button from "../common/Button";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -25,10 +28,14 @@ L.Icon.Default.mergeOptions({
 
 function Map() {
   const { cities } = useCities();
-  const [searchparams] = useSearchParams();
-  const currentLat = searchparams.get("lat");
-  const currentLng = searchparams.get("lng");
+
   const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [currentLat, currentLng] = useUrlPosition();
+  const {
+    isLoading: isLoadingPosition,
+    position: geolocationPosition,
+    getPosition,
+  } = useGeolocation();
 
   useEffect(
     function () {
@@ -39,8 +46,23 @@ function Map() {
     [currentLat, currentLng]
   );
 
+  useEffect(
+    function () {
+      if (geolocationPosition) {
+        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+      }
+    },
+    [geolocationPosition]
+  );
+
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use Your Position"}
+        </Button>
+      )}
+
       <MapContainer
         center={mapPosition}
         zoom={13}
