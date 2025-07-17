@@ -14,8 +14,8 @@ This is a **frontend-only project** created for educational purposes.
 - 🔐 **Fake login** for simulated authentication flow (in progress)
 - 💳 Product & pricing page
 - 🗺️ Interactive map with Leaflet
-- 📍 City and country list with detail view (WIP)
-- ➕ Form to add new cities (in progress)
+- 📍 City and country list with detail view (WIP) and city deletion
+- ➕ Form to add new cities with current map position (using geolocation data)
 
 ---
 
